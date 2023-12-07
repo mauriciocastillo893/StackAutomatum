@@ -1,0 +1,27 @@
+.header{
+    background-color: #333;
+    color: #fff;
+    font-weight: 800;
+    padding: 20px;
+    font-size: larger;
+}
+
+.size-stack-button{
+    background-color: #333;
+    width: 20%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 90%;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .2s all ease;
+}
+
+    .size-stack-button:hover{
+        background-color: #333333de;
+    }
