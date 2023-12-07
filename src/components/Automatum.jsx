@@ -7,8 +7,8 @@ export const Automatum = () => {
     const [firstTerminal, setFirstTerminal] = useState("")
     const [stackTerminal, setStackTerminal] = useState("")
 
-    // const [isEmptyButton, setIsEmptyButton] = useState(false)
-    // const [clearButton, setClearButton] = useState(false)
+    const [isEmptyButton, setIsEmptyButton] = useState(false)
+    const [clearButton, setClearButton] = useState(false)
     const [sizeButton, setSizeButton] = useState(false);
 
     const handleTextAreaCode = (e) => {
@@ -18,8 +18,17 @@ export const Automatum = () => {
         // GrammarValidatorRecepcionist({value: actualValue})
         { <GrammarValidatorRecepcionist value={actualValue} /> }
     }
+
     const handleSizeButtonClick = () => {
-        setSizeButton((prevEstado)=>!prevEstado);
+        setSizeButton((prevState)=>!prevState);
+    }
+
+    const handleClearButtonClick = () => {
+        setClearButton((prevState)=>!prevState);
+    }
+
+    const handleIsEmptyButtonClick = () => {
+        setIsEmptyButton((prevState)=>!prevState);
     }
 
     return (
@@ -40,11 +49,10 @@ export const Automatum = () => {
             <div className="stack-terminal">
                 {stackTerminal}
             </div>
-            <div className={"size-stack-button"} onClick={handleSizeButtonClick}>
-                Ver tamaño de la pila
-            </div>
-            {/* Renderiza GrammarValidatorRecepcionist con sizeButton */}
-            <GrammarValidatorRecepcionist value={textAreaState} sizeButton={sizeButton} />
+            <div className={"size-stack-button"} onClick={handleSizeButtonClick}>Verificar tamaño de la pila</div>
+            <div className={"size-stack-button"} onClick={handleClearButtonClick}>Borrar pila a la fuerza</div>
+            <div className={"size-stack-button"} onClick={handleIsEmptyButtonClick}>Verificar si la pila está vacia</div>
+            <GrammarValidatorRecepcionist sizeButton={sizeButton} isEmptyButton={isEmptyButton} clearButton={clearButton}/>
 
 
         </>
